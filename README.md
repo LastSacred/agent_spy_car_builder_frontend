@@ -6,9 +6,9 @@ fix car pictures RR
 fix footer RR
 styling selected feature RR
 style options RR
-collapse features AT
+--collapse features AT
 change gradient colors RR
-full summary AT
+add descriptions in seeds RRAT
 
 +1
 make start button work RR

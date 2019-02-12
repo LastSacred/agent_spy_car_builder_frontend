@@ -180,3 +180,22 @@ function showSelection(event) {
 
   selectionContainer.textContent = name
 }
+
+function toggleExpandFeature() {
+  let expandBtn
+  if (event.target.classList.contains('expand-btn')) {
+    expandBtn = event.target
+  } else {
+    expandBtn = event.target.parentElement.parentElement.nextElementSibling
+  }
+
+  const options = expandBtn.previousElementSibling
+
+  options.classList.toggle('collapse')
+
+  if (options.classList.contains('collapse')) {
+    expandBtn.textContent = 'Expand'
+  } else {
+    expandBtn.textContent = 'Collapse'
+  }
+}
