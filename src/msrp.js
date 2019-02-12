@@ -9,9 +9,34 @@ const allMsrp = {
   accessories: 0
 }
 
+function getCheckboxCost(checkbox) {
+  if (checkbox.checked) {
+    return parseInt(checkbox.dataset.cost)
+  } else {
+    return 0
+  }
+}
+
 function updateMsrp(event) {
-  const msrpNum = parseInt(event.target.parentElement.querySelector('.msrp').dataset.cost)
   const container = event.target.parentElement.parentElement
+  let msrpNum
+
+  if (event.target.type === 'checkbox') {
+    const checkboxes = container.querySelectorAll('input')
+
+    let costs = []
+
+    checkboxes.forEach((checkbox) => {
+      costs.push(getCheckboxCost(checkbox))
+    })
+
+    msrpNum = costs.reduce((a, b) =>{
+      return a + b
+    })
+  } else {
+    msrpNum = parseInt(event.target.dataset.cost)
+  }
+
   const feature = container.id
   let totalMsrp = 0
 
@@ -24,7 +49,7 @@ function updateMsrp(event) {
 
   msrpField.textContent = totalMsrp
 
-  if (feature !== 'car') {
+  if (feature !== 'car' && feature !== 'accessories') {
     const msrpValues = container.querySelectorAll('.msrp')
 
     msrpValues.forEach((msrpValue) => {
