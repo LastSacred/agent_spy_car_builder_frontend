@@ -178,7 +178,22 @@ function showSelection(event) {
   const selectionContainer = event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
   const name = event.target.parentElement.querySelector('h4').textContent
 
-  selectionContainer.textContent = name
+  if (event.target.type !== 'checkbox') {
+    selectionContainer.textContent = name
+  } else {
+    const accessoryDivs = event.target.parentElement.parentElement.childNodes
+
+    selectionContainer.innerHTML = ""
+
+    accessoryDivs.forEach((accessoryDiv) => {
+      if (accessoryDiv.querySelector('input').checked) {
+        const accessoryShow = document.createElement('div')
+        accessoryShow.textContent = accessoryDiv.querySelector('h4').textContent
+        selectionContainer.appendChild(accessoryShow)
+      }
+    })
+  }
+
 }
 
 function toggleExpandFeature() {

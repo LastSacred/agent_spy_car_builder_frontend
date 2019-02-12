@@ -8,6 +8,7 @@ styling selected feature RR
 style options RR
 --collapse features AT
 change gradient colors RR
+--show list of accessories AT
 add descriptions in seeds RRAT
 
 +1

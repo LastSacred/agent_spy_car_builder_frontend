@@ -25,9 +25,7 @@ function expandHandler() {
 function selectFeature() {
   updateMsrp(event)
 
-  if (event.target.type !== 'checkbox') {
-    showSelection(event)
-  }
+  showSelection(event)
 
   toggleExpandFeature()
 }
