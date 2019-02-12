@@ -14,7 +14,7 @@ function renderCars(cars) {
 function renderCar(car) {
   const card = document.createElement('div')
   card.dataset.id = car.id
-  divs['car'].appendChild(card)
+  divs.car.appendChild(card)
 
   const img = document.createElement('img')
   img.src = car.image
@@ -38,45 +38,42 @@ function renderCar(car) {
 }
 
 function renderCarOptions(car) {
-  console.log(car)
+  divs.powertrains.innerHTML = ""
+  car.powertrains.forEach(renderPowertrainOptions)
 
-  renderFeaturesOptions('powertrains', car)
+  divs.exteriors.innerHTML = ""
+  car.exteriors.forEach(renderExteriorOptions)
 }
 
-function renderFeaturesOptions(featuresName, car) {
-  divs[featuresName].innerHTML = ""
-  car[featuresName].forEach((feature) => renderFeatureOptions(feature, featuresName))
-}
-
-function renderFeatureOptions(feature, featuresName) {
+function renderPowertrainOptions(powertrain) {
     const card = document.createElement('div')
-    divs[featuresName].appendChild(card)
+    divs.powertrains.appendChild(card)
 
     const radio = document.createElement('input')
     radio.type = 'radio'
-    radio.name = featuresName
-    radio.value = feature.id
-    if (feature.standard) {
+    radio.name = 'powertrains'
+    radio.value = powertrain.id
+    if (powertrain.standard) {
       radio.checked = true
     }
     card.appendChild(radio)
 
     const name = document.createElement('h4')
-    name.textContent = feature.name
+    name.textContent = powertrain.name
     card.appendChild(name)
 
     const msrp = document.createElement('div')
     msrp.className = 'msrp'
-    msrp.dataset.cost = feature.msrp
-    msrp.textContent = feature.msrp
+    msrp.dataset.cost = powertrain.msrp
+    msrp.textContent = powertrain.msrp
     card.appendChild(msrp)
 
     const drivetrain = document.createElement('div')
-    drivetrain.textContent = "Drivetrain: " + feature.drivetrain
+    drivetrain.textContent = "Drivetrain: " + powertrain.drivetrain
     card.appendChild(drivetrain)
 
     const engine = document.createElement('div')
-    engine.textContent = "Engine: " + feature.engine
+    engine.textContent = "Engine: " + powertrain.engine
     card.appendChild(engine)
 
     radio.addEventListener('click', selectFeature)
@@ -84,11 +81,11 @@ function renderFeatureOptions(feature, featuresName) {
 
 function renderExteriorOptions(exterior) {
     const card = document.createElement('div')
-    exteriorOptions.appendChild(card)
+    divs.exteriors.appendChild(card)
 
     const radio = document.createElement('input')
     radio.type = 'radio'
-    radio.name = 'exterior'
+    radio.name = 'exteriors'
     radio.value = exterior.id
     if (exterior.standard) {
 
@@ -96,7 +93,7 @@ function renderExteriorOptions(exterior) {
     card.appendChild(radio)
 
     const name = document.createElement('h4')
-    name.textContent = exterior.name
+    name.textContent = exterior.color + " - " + exterior.trim
     card.appendChild(name)
 
     const msrp = document.createElement('div')
@@ -104,14 +101,6 @@ function renderExteriorOptions(exterior) {
     msrp.dataset.cost = exterior.msrp
     msrp.textContent = exterior.msrp
     card.appendChild(msrp)
-
-    const drivetrain = document.createElement('div')
-    drivetrain.textContent = "Drivetrain: " + exterior.drivetrain
-    card.appendChild(drivetrain)
-
-    const engine = document.createElement('div')
-    engine.textContent = "Engine: " + exterior.engine
-    card.appendChild(engine)
 
     radio.addEventListener('click', selectFeature)
 }
