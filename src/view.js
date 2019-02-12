@@ -61,10 +61,10 @@ function renderRadio(feature, featuresName, card, name) {
   radio.value = feature.id
   radio.dataset.cost = feature.msrp
   card.appendChild(radio)
-  
+
   if (feature.standard) {
     radio.checked = true
-    const selectionContainer = radio.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
+    const selectionContainer = radio.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
     selectionContainer.textContent = name.textContent
   }
 
@@ -175,7 +175,7 @@ function renderAccessoryOptions(accessory) {
 }
 
 function showSelection(event) {
-  const selectionContainer = event.target.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
+  const selectionContainer = event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
   const name = event.target.parentElement.querySelector('h4').textContent
 
   selectionContainer.textContent = name
