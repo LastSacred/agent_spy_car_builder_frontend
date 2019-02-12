@@ -14,4 +14,5 @@ function selectCar() {
 
 function selectFeature() {
   updateMsrp(event)
+  showSelection(event)
 }
