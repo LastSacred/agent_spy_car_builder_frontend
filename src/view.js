@@ -265,6 +265,8 @@ function hideOtherCars(carId) {
   divs.car.childNodes.forEach((car) => {
     if (car.nodeName !== "#comment" && car.dataset.id !== carId) {
       car.classList.add('collapse')
+    } else if (car.nodeName !== "#comment" && car.dataset.id === carId) {
+      car.querySelector('#car-button').classList.add('invisible')
     }
   })
 }
