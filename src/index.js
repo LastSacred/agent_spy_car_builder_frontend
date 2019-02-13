@@ -13,6 +13,10 @@ function selectCar() {
   updateMsrp()
 
   getCar(carId).then(renderCarOptions)
+
+  document.querySelector('#feature-container').classList.remove('collapse')
+
+  progressCompleted('car')
 }
 
 function expandHandler() {

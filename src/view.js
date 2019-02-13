@@ -234,7 +234,9 @@ function toggleExpandFeature() {
 
   if (options.classList.contains('collapse')) {
     expandBtn.textContent = 'Expand'
+    
+    progressCompleted(options.id)
   } else {
-    expandBtn.textContent = 'Collapse'
+    expandBtn.textContent = 'Submit'
   }
 }
