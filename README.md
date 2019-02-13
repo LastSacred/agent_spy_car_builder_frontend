@@ -9,7 +9,7 @@ style options RR
 --collapse features AT
 change gradient colors RR
 --show list of accessories AT
-add descriptions in seeds RRAT
+--add descriptions in seeds RRAT
 
 +1
 make start button work RR

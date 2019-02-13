@@ -9,7 +9,8 @@ function selectCar() {
 
   expandHandler()
 
-  updateMsrp(event)
+  allMsrp.car = parseInt(event.target.dataset.cost)
+  updateMsrp()
 
   getCar(carId).then(renderCarOptions)
 }
@@ -23,9 +24,25 @@ function expandHandler() {
 }
 
 function selectFeature() {
-  updateMsrp(event)
+  const featureName = event.target.parentElement.parentElement.id
 
   showSelection(event)
 
-  toggleExpandFeature()
+  if (featureName !== 'accessories') {
+    toggleExpandFeature()
+    allMsrp[featureName] = parseInt(event.target.dataset.cost)
+  } else {
+    const checkboxes = document.querySelector('#accessories').querySelectorAll('input')
+
+    let costs = []
+
+    checkboxes.forEach((checkbox) => {
+      costs.push(getCheckboxCost(checkbox))
+    })
+
+    allMsrp[featureName] = costs.reduce((a, b) =>{
+      return a + b
+    })
+  }
+  updateMsrp()
 }

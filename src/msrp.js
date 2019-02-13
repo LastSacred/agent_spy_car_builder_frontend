@@ -17,43 +17,30 @@ function getCheckboxCost(checkbox) {
   }
 }
 
-function updateMsrp(event) {
-  const container = event.target.parentElement.parentElement
-  let msrpNum
+function updateMsrp() {
 
-  if (event.target.type === 'checkbox') {
-    const checkboxes = container.querySelectorAll('input')
-
-    let costs = []
-
-    checkboxes.forEach((checkbox) => {
-      costs.push(getCheckboxCost(checkbox))
-    })
-
-    msrpNum = costs.reduce((a, b) =>{
-      return a + b
-    })
-  } else {
-    msrpNum = parseInt(event.target.dataset.cost)
-  }
-
-  const feature = container.id
   let totalMsrp = 0
 
-  allMsrp[feature] = msrpNum
-
-
   for(let msrp in allMsrp) {
-    totalMsrp += allMsrp[msrp]
+   totalMsrp += allMsrp[msrp]
   }
 
   msrpField.textContent = totalMsrp
 
-  if (feature !== 'car' && feature !== 'accessories') {
-    const msrpValues = container.querySelectorAll('.msrp')
+  const featureNames = [
+    'powertrain',
+    'exterior',
+    'wheels',
+    'interior'
+  ]
+
+  featureNames.forEach((featureName) => {
+    const msrpValues = document.querySelector("#" + featureName).querySelectorAll('.msrp')
 
     msrpValues.forEach((msrpValue) => {
-      msrpValue.textContent = msrpValue.dataset.cost - allMsrp[feature]
+      msrpValue.textContent = msrpValue.dataset.cost - allMsrp[featureName]
     })
-  }
+  })
+
+
 }
