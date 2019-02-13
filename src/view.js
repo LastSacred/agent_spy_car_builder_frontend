@@ -1,6 +1,7 @@
 const divs = {
   car: document.querySelector('#car'),
-  // carButton: document.querySelector('#start-build'),
+  // spadeButton: document.querySelector('#start-build-spade'),
+  // rratButton: document.querySelector('#start-build-RRAT'),
   powertrains: document.querySelector('#powertrain'),
   exteriors: document.querySelector('#exterior'),
   wheels: document.querySelector('#wheels'),
@@ -14,17 +15,18 @@ function renderCars(cars) {
 
 function renderCar(car) {
   const card = document.createElement('div')
+  card.classList.add("col-lg-6", "align-items-center", "pl-20", "pr-20");
   card.dataset.id = car.id
   divs.car.appendChild(card)
 
   const name = document.createElement('h4')
   name.classList.add("title");
   name.textContent = car.name
-
   card.appendChild(name)
 
   const img = document.createElement('img')
   img.src = car.image
+  img.classList.add("car-image");
   img.dataset.cost = car.msrp
   card.appendChild(img)
 
@@ -38,6 +40,9 @@ function renderCar(car) {
   card.appendChild(description)
 
   img.addEventListener('click', selectCar)
+  // divs.spadeButton.addEventListener('click', selectCar)
+  // divs.rratButton.addEventListener('click', selectCar)
+
 }
 
 function renderCarOptions(car) {

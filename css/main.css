@@ -2654,6 +2654,10 @@ background-image: -webkit-linear-gradient(0deg, rgba(230, 101, 135, 0.4) 0%, rgb
 .msrp {
     font-size: 120%;
     margin: 10px 0 10px 0;}
+
+.car-image{
+    max-width: 83%;
+    height: auto;}
 /*
     #powertrain-list > * {
         border: 1px red solid!important;}
