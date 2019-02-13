@@ -152,7 +152,7 @@ function renderWheelOptions(wheel, index) {
 
   renderMsrp(wheel, card)
 
-  renderRadio(wheel, featureName, card, name)
+  renderRadio(wheel, featureName, card, name, !index)
 }
 
 function renderInteriorOptions(interior, index) {
@@ -170,7 +170,7 @@ function renderInteriorOptions(interior, index) {
 
   renderMsrp(interior, card)
 
-  renderRadio(interior, featureName, card, name)
+  renderRadio(interior, featureName, card, name, !index)
 }
 
 function renderAccessoryOptions(accessory) {
