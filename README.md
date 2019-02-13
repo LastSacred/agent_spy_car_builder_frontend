@@ -15,9 +15,9 @@ change gradient colors RR
 make start button work RR
 login AT
 saving car AT
-add another car RRAT
+--add another car RRAT
 change logo RR
-footer progress bar RRAT
+--footer progress bar RRAT
 
 +2
 ability to get user's cars RRAT

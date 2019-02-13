@@ -1,7 +1,31 @@
+let username
+
 document.addEventListener('DOMContentLoaded', setup)
 
 function setup() {
+  loginHandler()
   getCars().then(renderCars)
+}
+
+function loginHandler() {
+  const loginForm = document.querySelector('form.subscription')
+  const carSelect = document.querySelector('.subscription-area')
+  const usernameDisplay = document.querySelector('#username')
+
+  loginForm.addEventListener('submit', login)
+
+  function login() {
+    event.preventDefault()
+
+    username = loginForm.username.value
+
+    loginForm.classList.add('collapse')
+    carSelect.classList.remove('collapse')
+
+    usernameDisplay.textContent = "Welcome " + username
+
+    event.target.reset()
+  }
 }
 
 function selectCar() {
