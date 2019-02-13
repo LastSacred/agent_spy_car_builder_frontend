@@ -2658,6 +2658,10 @@ background-image: -webkit-linear-gradient(0deg, rgba(230, 101, 135, 0.4) 0%, rgb
 .car-image{
     max-width: 83%;
     height: auto;}
+
+#car-button * {
+    pointer-events: none;}
+    /* z-index: 2!important;} */
 /*
     #powertrain-list > * {
         border: 1px red solid!important;}

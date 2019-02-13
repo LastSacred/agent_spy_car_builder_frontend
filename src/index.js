@@ -30,6 +30,8 @@ function loginHandler() {
 
 function selectCar() {
   const carId = event.target.parentElement.dataset.id
+  console.log(carId)
+  console.log(event.target)
 
   expandHandler()
 

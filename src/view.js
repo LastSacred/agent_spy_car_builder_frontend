@@ -1,7 +1,5 @@
 const divs = {
   car: document.querySelector('#car'),
-  // spadeButton: document.querySelector('#start-build-spade'),
-  // rratButton: document.querySelector('#start-build-RRAT'),
   powertrains: document.querySelector('#powertrain'),
   exteriors: document.querySelector('#exterior'),
   wheels: document.querySelector('#wheels'),
@@ -40,8 +38,25 @@ function renderCar(car) {
   card.appendChild(description)
 
   img.addEventListener('click', selectCar)
-  // divs.spadeButton.addEventListener('click', selectCar)
-  // divs.rratButton.addEventListener('click', selectCar)
+
+  // Button //
+  const link = document.createElement('a')
+  link.classList.add("primary-btn", "hover", "d-inline-flex", "align-items-center");
+  link.id = ("car-button");
+  link.dataset.cost = car.msrp
+  card.appendChild(link)
+
+  const text = document.createElement('span')
+  text.classList.add("mr-10");
+  text.textContent = "Start Build"
+  link.appendChild(text)
+
+  const arrow = document.createElement('span')
+  arrow.classList.add("lnr", "lnr-arrow-right");
+  link.appendChild(arrow)
+
+  link.addEventListener('click', selectCar)
+  // End Button //
 
 }
 
