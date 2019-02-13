@@ -2462,11 +2462,15 @@ body:after {
 
 
 footer {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(34, 34, 34, .85);
+  -webkit-box-shadow:inset 6px 6px 20px 5px rgba(34, 34, 34, .9);
+  box-shadow:inset 8px 8px 100px 10px rgba(34, 34, 34, .9);
+  height: 6.3rem;
   padding: 15px 0;
   position: fixed;
   width: 75%;
   bottom: 0px;
+  z-index: 10;
 }
 
 footer .copy-right-text {
@@ -2474,17 +2478,23 @@ footer .copy-right-text {
 }
 
 
+/*****************************************************************/
+/********************** ADDED MEDIA QUERIES **********************/
+/*****************************************************************/
+
 @media (max-width: 1199px){
     footer {
         width: 90% !important;
     }
 }
 
+
 @media (max-width: 991px) {
   footer {
     width: 90% !important;
   }
 }
+
 
 @media (max-width: 991px) {
   footer .copy-right-text {
@@ -2493,14 +2503,22 @@ footer .copy-right-text {
 }
 @media (max-width: 767px){
     footer {
-    width: 97%;
+        width: 97% !important;
+    }
 }
-}
+
+
 @media (min-width: 1200px){
     footer {
         width: 75% !important;
     }
-    }
+}
+/*****************************************************************/
+/*****************************************************************/
+
+
+
+
 footer .copy-right-text a {
   color: #e66686;
 }
@@ -2585,41 +2603,27 @@ footer .copy-right-text a {
 
 
 
-
+/*******************************************************/
+/********************** ADDED CSS **********************/
+/*******************************************************/
 .push {
     width: 90.00%;
     margin: 0 auto;
-    height: 125px;
-}
-
-.footer-sticky{
-    width: 90.00%;
-    margin: 0 auto;
-    height: 125px;
-    position: fixed;
-    bottom: 0px;
-}
-
-@media (min-width: 1200px){
-    .footer-sticky .push {
-        width: 75%;}
-
-    .footer-sticky .push {
-        width: 90.00%;
-        margin: 0 auto;}
+    height: 6.3rem;
 }
 
 
-@media (max-width: 1199px){
-    .footer-sticky .push {
-        width: 90%;}
-}
-
-@media (max-width: 767px){
-    .footer-sticky .push {
-        width: 97%;}
-}
-
-.footerMsrp {
+.footer-msrp {
     color: #fff;
+}
+
+#z-index-front {
+    z-index: 10!important;
+}
+
+
+#status-bar-padding {
+    padding-left: 20px;
+    padding-right: 100px;
+
 }

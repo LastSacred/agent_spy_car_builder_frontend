@@ -1,5 +1,6 @@
 const divs = {
   car: document.querySelector('#car'),
+  // carButton: document.querySelector('#start-build'),
   powertrains: document.querySelector('#powertrain'),
   exteriors: document.querySelector('#exterior'),
   wheels: document.querySelector('#wheels'),
