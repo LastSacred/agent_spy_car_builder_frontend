@@ -1,3 +1,7 @@
+const loginForm = document.querySelector('form.subscription')
+const carSelect = document.querySelector('.subscription-area')
+const usernameDisplay = document.querySelector('#username')
+
 let username
 
 document.addEventListener('DOMContentLoaded', setup)
@@ -8,10 +12,6 @@ function setup() {
 }
 
 function loginHandler() {
-  const loginForm = document.querySelector('form.subscription')
-  const carSelect = document.querySelector('.subscription-area')
-  const usernameDisplay = document.querySelector('#username')
-
   loginForm.addEventListener('submit', login)
 
   function login() {
@@ -39,6 +39,8 @@ function selectCar() {
   getCar(carId).then(renderCarOptions)
 
   document.querySelector('#feature-container').classList.remove('collapse')
+
+  hideOtherCars(carId)
 
   progressCompleted('car')
 }

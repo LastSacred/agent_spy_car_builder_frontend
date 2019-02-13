@@ -239,9 +239,17 @@ function toggleExpandFeature() {
 
   if (options.classList.contains('collapse')) {
     expandBtn.textContent = 'Expand'
-    
+
     progressCompleted(options.id)
   } else {
     expandBtn.textContent = 'Submit'
   }
+}
+
+function hideOtherCars(carId) {
+  divs.car.childNodes.forEach((car) => {
+    if (car.nodeName !== "#comment" && car.dataset.id !== carId) {
+      car.classList.add('collapse')
+    }
+  })
 }
