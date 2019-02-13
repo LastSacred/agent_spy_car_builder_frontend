@@ -30,16 +30,12 @@
 	</head>
 	<body>
 
-		<!------------------>
-		<!-- Page Wrapper -->
-		<!------------------>
 
+		<!---------- Page Wrapper ---------->
 		<div class="main-wrapper">
 
 
-			<!------------------>
-			<!-- Page Nav-Bar -->
-			<!------------------>
+			<!---------- Page Nav-Bar ---------->
 			<header>
 				<div class="container">
 					<div class="header-wrap">
@@ -61,16 +57,17 @@
 			</header>
 
 
-			<!------------------>
-			<!-- Page Header -->
-			<!------------------>
+
+			<!---------- Page Header/Banner ---------->
 			<div class="banner-area">
 				<div class="container" id="z-index-front">
+
 					<div class="row justify-content-center height align-items-center">
 						<div class="col-lg-8">
 							<div class="banner-content text-center">
 								<span class="text-white top text-uppercase">"Need I remind you 007, that you have a licence to kill, not to break the traffic laws."</span>
 								<h1 class="text-white text-uppercase">Agent - The Spy Car Company</h1>
+
 								<div class="row justify-content-center">
 									<div class="col-lg-8">
 										<div id="mc_embed_signup">
@@ -79,33 +76,37 @@
 												<div style="position: absolute; left: -5000px;">
 													<input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
 												</div>
+												<a id="#start-build">
 												<button class="primary-btn hover d-inline-flex align-items-center"><span class="mr-10">Get Started</span><span class="lnr lnr-arrow-right"></span></button>
-												<div class="info"></div>
+												</a>
+												<!-- <div class="info"></div> -->  <!--Leave Here, Not Sure if Needed Yet -->
 											</form>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</div>
 
 
-			<!------------------------------------->
-			<!-- Start Feature Area - Choose Car -->
-			<!------------------------------------->
+
+			<!---------- Choose Car ---------->
 			<section class="subscription-area">
 				<div class="container">
+
 					<div class="row justify-content-center">
 						<div class="col-lg-8">
 							<div class="section-title text-center">
+								<a href="start-build"></a>
 								<h3>Choose Spy Vehicle To Start Your Build: </h3>
 								<span class="text-uppercase">This is a configurator. Your ability to obtain the vehicle you build depends on availability.</span>
 							</div>
 						</div>
 					</div>
-
 
 					<div class="row align-items-center">
 						<div class="col-lg-6">
@@ -122,152 +123,117 @@
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</section>
 
 
-			<!------------------------>
-			<!-- Start Feature Area -->
-			<!------------------------>
+
+			<!---------- Feature Area ---------->
 			<div id="feature-container" class="white-bg">
-			<!-- <section class="featured-area"> -->
 				<div class="container">
+
+
+					<!---------- Powertrain ---------->
 					<div id="powertrain-container" class="section-top-border">
-						<!-- <div class="row"> -->
-							<div class="row feature-header">
-								<!-- <div class="col-md-6"> -->
-									<aside class="col-md-6"><h2>Powertrain</h2></aside>
-									<div class="col-md-6"></div>
-								<!-- </div> -->
-							</div>
-						<!-- </div> -->
-						<!-- </div> -->
+						<div class="row feature-header">
+							<aside class="col-md-6 pb-20 pl-30">
+								<h2 class="inline-flex">Powertrain</h2>
+								<!-- <a class="primary-btn button-area hover d-inline-flex align-items-center expand-btn ml-30">Expand</a> -->
+							</aside>
+							<div id="powertrain-list" class="col-md-6"></div>
+						</div>
 						<div class="row">
-							<!-- <div class="col-md-3">
-								<img src="img/d.jpg" alt="" class="img-fluid">
-							</div> -->
-
-							<!-- <div id="powertrain" class="col-md-9 mt-sm-20"></div> -->
 							<div id="powertrain" class="col-md-12 mt-sm-24 options collapse"></div>
-							<button class="genric-btn expand-btn default circle arrow">Expand</button>
-
+							<a class="primary-btn hover d-inline-flex align-items-center expand-btn ml-30">Expand</a>
 						</div>
 					</div>
 
+					<!---------- Exterior ---------->
 					<div id="exterior-container" class="section-top-border">
-						<div class="feature-header">
-
-						<h2 class="mb-40 ml-30">Exterior</h2>
-						<div></div>
-					</div>
-
+						<div class="row feature-header">
+							<aside class="col-md-6 pb-20 pl-30"><h2>Exterior</h2></aside>
+							<div id="exterior-list" class="col-md-6"></div>
+						</div>
 						<div class="row">
 							<div id="exterior" class="col-md-12 mt-sm-24 options collapse"></div>
-							<button class="genric-btn expand-btn default circle arrow">Expand</button>
-							<!-- <div class="col-md-3">
-								<p class="text-center"><img src="img/d.jpg" alt="" class="img-fluid"></p>
-							</div> -->
+							<a class="primary-btn hover d-inline-flex align-items-center expand-btn ml-30">Expand</a>
 						</div>
 					</div>
 
+					<!---------- Wheels ---------->
 					<div id="wheels-container" class="section-top-border">
-						<div class="feature-header">
-							<h2 class="ml-30 mb-40">Wheels</h2>
-							<div></div>
+						<div class="row feature-header">
+							<aside class="col-md-6 pb-20 pl-30"><h2>Wheels</h2></aside>
+							<div id="wheels-list" class="col-md-6"></div>
 						</div>
 						<div class="row">
-							<!-- <div class="col-md-3">
-								<img src="img/d.jpg" alt="" class="img-fluid">
-							</div> -->
 							<div id="wheels" class="col-md-12 mt-sm-24 options collapse"></div>
-							<button class="genric-btn expand-btn default circle arrow">Expand</button>
+							<a class="primary-btn hover d-inline-flex align-items-center expand-btn ml-30">Expand</a>
 						</div>
 					</div>
 
+					<!---------- Interior ---------->
 					<div id="interior-container" class="section-top-border">
-						<div class="feature-header">
-
-						<h2 class="mb-40 ml-30">Interior</h2>
-						<div></div>
-					</div>
-
+						<div class="row feature-header">
+							<aside class="col-md-6 pb-20 pl-30"><h2>Interior</h2></aside>
+							<div id="interior-list" class="col-md-6"></div>
+						</div>
 						<div class="row">
 							<div id="interior" class="col-md-12 mt-sm-24 options collapse"></div>
-							<button class="genric-btn expand-btn default circle arrow">Expand</button>
-							<!-- <div class="col-md-3">
-								<p class="text-center"><img src="img/d.jpg" alt="" class="img-fluid"></p>
-							</div> -->
+							<a class="primary-btn hover d-inline-flex align-items-center expand-btn ml-30">Expand</a>
 						</div>
 					</div>
 
+					<!---------- Accessories ---------->
 					<div id="accessories-container" class="section-top-border">
-						<div class="feature-header">
-							<h2 class="ml-30 mb-40">Spy Accessories</h2>
-							<div></div>
+						<div class="row feature-header">
+							<aside class="col-md-6 pb-20 pl-30"><h2>Spy Accessories</h2></aside>
+							<div id="accessories-list" class="col-md-6"></div>
 						</div>
 						<div class="row">
-							<!-- <div class="col-md-3">
-								<img src="img/d.jpg" alt="" class="img-fluid">
-							</div> -->
 							<div id="accessories" class="col-md-12 mt-sm-24 options collapse"></div>
-						<button class="genric-btn expand-btn default circle arrow">Expand</button>
+							<a class="primary-btn hover d-inline-flex align-items-center expand-btn ml-30">Expand</a>
 						</div>
 					</div>
+
 
 				</div>
 			</div>
 
 
-		<!------------------>
-		<!--    Footer    -->
-		<!------------------>
-
+		<!---------- Footer ---------->
 		<div class="push"></div>
 		<footer>
 			<div class="container">
-				<!-- <div class="footer-content d-flex justify-content-between align-items-center flex-wrap"> -->
 				<div class="footer-content">
-					<div class="logo">
-						<!-- <img src="img/logo.png" alt=""> -->
-					</div>
-					<!-- <div class="copy-right-text">Copyright &copy; 2017  |  All rights reserved to Dinomuz inc. This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></div>
-					<div class="footer-social">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="#"><i class="fa fa-dribbble"></i></a>
-						<a href="#"><i class="fa fa-behance"></i></a>
-					</div>
-				</div> -->
-
-						<div class="row">
-							<div id="" class="col-md-10 mt-sm-20">
-								<h4 class="text-white pl-30">Build Progress</h4>
-							</div>
-							<div id="total-price" class="col-md-2 mt-sm-2 text-center">
-								<h4><span class='footer-msrp align-items-center'>$</span><span id="total-msrp" class='footer-msrp align-items-center'>0</span><span class='footer-msrp align-items-center'>.00</span></h4>
-								<!-- <span class='footer-msrp'>MSRP as built: </span> -->
-							</div>
+					<div class="logo"> <!-- <img src="img/logo.png" alt=""> --></div>
+					<div class="row">
+						<div id="" class="col-md-10 mt-sm-20">
+							<h4 class="text-white pl-30">Build Progress</h4>
 						</div>
-						<div class="row">
-							<div id="" class="col-md-10 mt-sm-20">
-								<div id="status-bar-padding"class="table-row">
+						<div id="total-price" class="col-md-2 mt-sm-2 text-center">
+							<h4><span class='footer-msrp align-items-center'>$</span><span id="total-msrp" class='footer-msrp align-items-center'>0</span><span class='footer-msrp align-items-center'>.00</span></h4>
+						</div>
+					</div>
+					<div class="row">
+						<div id="" class="col-md-10 mt-sm-20">
+							<div id="status-bar-padding"class="table-row">
 								<div class="percentage">
 									<div class="progress">
 										<div class="progress-bar color-8" role="progressbar" style="width: 5%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
 									</div>
 								</div>
-								</div>
-							</div>
-							<div id="total-price" class="col-md-2 mt-sm-2 text-center">
-								<!-- <span id="total-msrp" class='footer-msrp align-items-center'></span> -->
-								<h4><span class='footer-msrp'>MSRP AS BUILT: </span></h4>
 							</div>
 						</div>
+						<div id="total-price" class="col-md-2 mt-sm-2 text-center">
+							<h4><span class='footer-msrp'>MSRP AS BUILT: </span></h4>
+						</div>
 					</div>
+				</div>
 
 			</div>
 		</footer>
-		<!---   End Footer   --->
 
 
 	</div>

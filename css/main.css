@@ -2609,21 +2609,47 @@ footer .copy-right-text a {
 .push {
     width: 90.00%;
     margin: 0 auto;
-    height: 6.3rem;
-}
-
+    height: 6.3rem;}
 
 .footer-msrp {
-    color: #fff;
-}
+    color: #fff;}
 
 #z-index-front {
-    z-index: 10!important;
-}
-
+    z-index: 10!important;}
 
 #status-bar-padding {
     padding-left: 20px;
-    padding-right: 100px;
+    padding-right: 100px;}
 
-}
+#powertrain * {
+    border: 1px red solid!important;}
+
+#exterior * {
+    border: 1px red solid;}
+
+#wheels * {
+    border: 1px red solid;}
+
+#interior * {
+    border: 1px red solid;}
+
+#accessories * {
+    border: 1px red solid;}
+/*
+    #powertrain-list > * {
+        border: 1px red solid!important;}
+
+    #powertrain-list > div {
+        border: 1px red solid!important;}
+
+    #exterior-list < * {
+        border: 1px red solid;}
+
+    #wheels-list < * {
+        border: 1px red solid;}
+
+    #interior-list < * {
+        border: 1px red solid;}
+
+    #accessories-list < * {
+        border: 1px red solid;} */

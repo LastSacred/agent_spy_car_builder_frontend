@@ -17,21 +17,22 @@ function renderCar(car) {
   card.dataset.id = car.id
   divs.car.appendChild(card)
 
+  const name = document.createElement('h4')
+  name.textContent = car.name
+
+  card.appendChild(name)
+
   const img = document.createElement('img')
   img.src = car.image
   img.dataset.cost = car.msrp
   card.appendChild(img)
 
-  const name = document.createElement('h2')
-  name.textContent = car.name
-  card.appendChild(name)
-
-  const msrp = document.createElement('div')
+  const msrp = document.createElement('p')
   msrp.className = 'msrp'
-  msrp.textContent = "Base MSRP: " + car.msrp
+  msrp.textContent = "Base MSRP: $ " + car.msrp + ".00"
   card.appendChild(msrp)
 
-  const description = document.createElement('div')
+  const description = document.createElement('p')
   description.textContent = car.description
   card.appendChild(description)
 
@@ -76,7 +77,7 @@ function renderMsrp(feature, card) {
   const msrp = document.createElement('div')
   msrp.className = 'msrp'
   msrp.dataset.cost = feature.msrp
-  msrp.textContent = feature.msrp
+  msrp.textContent = `$ ${feature.msrp}.00`
   card.appendChild(msrp)
 }
 
@@ -85,33 +86,41 @@ function renderPowertrainOptions(powertrain) {
   divs.powertrains.appendChild(card)
 
   const name = document.createElement('h4')
-  name.textContent = powertrain.name
+  name.textContent = `The ${powertrain.name} Package`
   card.appendChild(name)
 
-  renderRadio(powertrain,'powertrains', card, name)
-
-  renderMsrp(powertrain, card)
-
-  const drivetrain = document.createElement('div')
+  const drivetrain = document.createElement('li')
   drivetrain.textContent = "Drivetrain: " + powertrain.drivetrain
   card.appendChild(drivetrain)
 
-  const engine = document.createElement('div')
+  const engine = document.createElement('li')
   engine.textContent = "Engine: " + powertrain.engine
   card.appendChild(engine)
+
+  renderMsrp(powertrain, card)
+
+  renderRadio(powertrain,'powertrains', card, name)
 }
 
 function renderExteriorOptions(exterior) {
   const card = document.createElement('div')
   divs.exteriors.appendChild(card)
 
+  // const name = document.createElement('h4')
+  // name.textContent = exterior.color + " - " + exterior.trim
+  // card.appendChild(name)
+
   const name = document.createElement('h4')
-  name.textContent = exterior.color + " - " + exterior.trim
+  name.textContent = exterior.color
   card.appendChild(name)
 
-  renderRadio(exterior,'exteriors', card, name)
+  const trim = document.createElement('h5')
+  trim.textContent = "Trim Properties: " + exterior.trim
+  card.appendChild(trim)
 
   renderMsrp(exterior, card)
+
+  renderRadio(exterior,'exteriors', card, name)
 }
 
 function renderWheelOptions(wheel) {
@@ -122,10 +131,6 @@ function renderWheelOptions(wheel) {
   name.textContent = wheel.name
   card.appendChild(name)
 
-  renderRadio(wheel,'wheels', card, name)
-
-  renderMsrp(wheel, card)
-
   const size = document.createElement('div')
   size.textContent = "Size: " + wheel.size
   card.appendChild(size)
@@ -133,6 +138,10 @@ function renderWheelOptions(wheel) {
   const finish = document.createElement('div')
   finish.textContent = "Finish: " + wheel.finish
   card.appendChild(finish)
+
+  renderMsrp(wheel, card)
+
+  renderRadio(wheel,'wheels', card, name)
 }
 
 function renderInteriorOptions(interior) {
@@ -143,22 +152,18 @@ function renderInteriorOptions(interior) {
   name.textContent = interior.color + " - " + interior.upholstery
   card.appendChild(name)
 
-  renderRadio(interior,'interiors', card, name)
+  const trim = document.createElement('li')
+  trim.textContent = interior.trim
+  card.appendChild(trim)
 
   renderMsrp(interior, card)
 
-  const trim = document.createElement('div')
-  trim.textContent = interior.trim
-  card.appendChild(trim)
+  renderRadio(interior,'interiors', card, name)
 }
 
 function renderAccessoryOptions(accessory) {
   const card = document.createElement('div')
   divs.accessories.appendChild(card)
-
-  const name = document.createElement('h4')
-  name.textContent = accessory.name
-  card.appendChild(name)
 
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
@@ -167,12 +172,16 @@ function renderAccessoryOptions(accessory) {
   checkbox.dataset.cost = accessory.msrp
   card.appendChild(checkbox)
 
-  renderMsrp(accessory, card)
+  const name = document.createElement('h4')
+  name.textContent = accessory.name
+  card.appendChild(name)
 
-  const description = document.createElement('div')
+  const description = document.createElement('p')
   description.textContent = accessory.description
   card.appendChild(description)
   checkbox.addEventListener('click', selectFeature)
+
+  renderMsrp(accessory, card)
 }
 
 function showSelection(event) {
