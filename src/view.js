@@ -18,6 +18,7 @@ function renderCar(car) {
   divs.car.appendChild(card)
 
   const name = document.createElement('h4')
+  name.classList.add("title");
   name.textContent = car.name
 
   card.appendChild(name)
@@ -66,7 +67,7 @@ function renderRadio(feature, featuresName, card, name) {
 
   if (feature.standard) {
     radio.checked = true
-    const selectionContainer = radio.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
+    const selectionContainer = radio.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div').querySelector('h5')
     selectionContainer.textContent = name.textContent
   }
 
@@ -185,7 +186,7 @@ function renderAccessoryOptions(accessory) {
 }
 
 function showSelection(event) {
-  const selectionContainer = event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div')
+  const selectionContainer = event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div').querySelector('h5')
   const name = event.target.parentElement.querySelector('h4').textContent
 
   if (event.target.type !== 'checkbox') {

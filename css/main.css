@@ -2333,7 +2333,7 @@ body:after {
 
 .subscription-area {
   background: #fff;
-  padding: 100px 0;
+  padding: 65px 0px 40px 0px;
 }
 
 .subscription input {
@@ -2589,7 +2589,7 @@ footer .copy-right-text a {
 }
 
 .section-top-border {
-  padding: 70px 0;
+  padding: 5px 0px 20px 0px;
   border-top: 1px dotted #919191;
 }
 
@@ -2621,6 +2621,18 @@ footer .copy-right-text a {
     padding-left: 20px;
     padding-right: 100px;}
 
+.expand-collapse-style{
+    line-height: 25px;
+    padding: 0px 14px;
+    border-radius: 30px;
+    font-weight: 100;}
+
+.expand-collapse-style.hover{
+    border: 2px solid #68676761;}
+
+.expand-collapse-style:after{
+background-image: -webkit-linear-gradient(0deg, rgba(230, 101, 135, 0.4) 0%, rgba(240, 148, 88, 0.4) 100%);}
+
 #powertrain * {
     border: 1px red solid!important;}
 
@@ -2635,6 +2647,13 @@ footer .copy-right-text a {
 
 #accessories * {
     border: 1px red solid;}
+
+.title{
+    margin: 10px 0;}
+
+.msrp {
+    font-size: 120%;
+    margin: 10px 0 10px 0;}
 /*
     #powertrain-list > * {
         border: 1px red solid!important;}
