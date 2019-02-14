@@ -230,7 +230,7 @@ function renderAccessoryOptions(accessory) {
 
 function showSelection(event) {
   const selectionContainer = event.target.closest('.section-top-border').querySelector('h5')
-  const name = event.target.parentElement.querySelector('h4').textContent
+  const name = event.target.closest(".row").querySelector('h4').textContent
 
   if (event.target.type !== 'checkbox') {
     selectionContainer.textContent = name
@@ -256,9 +256,10 @@ function toggleExpandFeature() {
   if (event.target.classList.contains('expand-btn')) {
     expandBtn = event.target
   } else {
-    expandBtn = event.target.closest('.row').querySelector('.primary-btn')
+    expandBtn = event.target.closest(".section-top-border").querySelector(".expand-btn")
   }
-  const options = expandBtn.parentElement.querySelector('.options')
+  const options = expandBtn.closest(".section-top-border").querySelector('.options')
+
 
   options.classList.toggle('collapse')
 
