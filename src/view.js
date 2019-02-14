@@ -85,7 +85,7 @@ function renderRadio(feature, featureName, card, name, first) {
   radio.name = featureName
   radio.value = feature.id
   radio.dataset.cost = feature.msrp
-  card.appendChild(radio)
+  card.insertBefore(radio, card.firstChild)
 
   if (first) {
     radio.checked = true
@@ -110,8 +110,17 @@ function renderMsrp(feature, card) {
 function renderPowertrainOptions(powertrain, index) {
   const featureName = 'powertrain'
 
+  const row = document.createElement('div')
+  row.classList.add("row");
+  divs.powertrains.appendChild(row)
+
+  const cardRadio = document.createElement('div')
+  cardRadio.classList.add("col-lg-1", "align-items-right", "pt-20");
+  row.appendChild(cardRadio)
+
   const card = document.createElement('div')
-  divs.powertrains.appendChild(card)
+  card.classList.add("col-lg-4", "align-items-center");
+  row.appendChild(card)
 
   const name = document.createElement('h4')
   name.textContent = `The ${powertrain.name} Package`
@@ -127,7 +136,7 @@ function renderPowertrainOptions(powertrain, index) {
 
   renderMsrp(powertrain, card)
 
-  renderRadio(powertrain, featureName, card, name, !index)
+  renderRadio(powertrain, featureName, cardRadio, name, !index)
 }
 
 function renderExteriorOptions(exterior, index) {

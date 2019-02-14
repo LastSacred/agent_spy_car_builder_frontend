@@ -38,7 +38,7 @@ function updateMsrp() {
     const msrpValues = document.querySelector("#" + featureName).querySelectorAll('.msrp')
 
     msrpValues.forEach((msrpValue) => {
-      msrpValue.textContent = msrpValue.dataset.cost - allMsrp[featureName]
+      msrpValue.textContent = `$ ${msrpValue.dataset.cost - allMsrp[featureName]}.00`
     })
   })
 
