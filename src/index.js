@@ -54,7 +54,7 @@ function expandHandler() {
 }
 
 function selectFeature() {
-  const featureName = event.target.parentElement.parentElement.id
+  const featureName = event.target.closest('.options').id
 
   showSelection(event)
 

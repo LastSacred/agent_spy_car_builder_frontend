@@ -89,7 +89,8 @@ function renderRadio(feature, featureName, card, name, first) {
 
   if (first) {
     radio.checked = true
-    const selectionContainer = radio.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div').querySelector('h5')
+
+    const selectionContainer = radio.closest('.section-top-border').querySelector('h5')
     selectionContainer.textContent = name.textContent
 
     allMsrp[featureName] = feature.msrp
@@ -219,13 +220,14 @@ function renderAccessoryOptions(accessory) {
 }
 
 function showSelection(event) {
-  const selectionContainer = event.target.parentElement.parentElement.parentElement.parentElement.querySelector('.feature-header').querySelector('div').querySelector('h5')
+  const selectionContainer = event.target.closest('.section-top-border').querySelector('h5')
   const name = event.target.parentElement.querySelector('h4').textContent
 
   if (event.target.type !== 'checkbox') {
     selectionContainer.textContent = name
   } else {
-    const accessoryDivs = event.target.parentElement.parentElement.childNodes
+
+    const accessoryDivs = event.target.closest('.options').childNodes
 
     selectionContainer.innerHTML = ""
 
@@ -245,10 +247,10 @@ function toggleExpandFeature() {
   if (event.target.classList.contains('expand-btn')) {
     expandBtn = event.target
   } else {
-    expandBtn = event.target.parentElement.parentElement.nextElementSibling
+    expandBtn = event.target.closest('.row').querySelector('.primary-btn')
   }
-
-  const options = expandBtn.previousElementSibling
+  debugger
+  const options = expandBtn.parentElement.querySelector('.options')
 
   options.classList.toggle('collapse')
 
