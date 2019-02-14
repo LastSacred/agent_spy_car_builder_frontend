@@ -11,6 +11,8 @@ function renderCars(cars) {
   cars.forEach(renderCar)
 }
 
+
+
 function renderCar(car) {
   const card = document.createElement('div')
   card.classList.add("col-lg-6", "align-items-center", "pl-20", "pr-20");
@@ -60,6 +62,8 @@ function renderCar(car) {
 
 }
 
+
+
 function renderCarOptions(car) {
   divs.powertrains.innerHTML = ""
   car.powertrains.forEach(renderPowertrainOptions)
@@ -78,6 +82,8 @@ function renderCarOptions(car) {
 
   updateMsrp()
 }
+
+
 
 function renderRadio(feature, featureName, card, name, first) {
   const radio = document.createElement('input')
@@ -99,6 +105,8 @@ function renderRadio(feature, featureName, card, name, first) {
   radio.addEventListener('click', selectFeature)
 }
 
+
+
 function renderMsrp(feature, card) {
   const msrp = document.createElement('div')
   msrp.className = 'msrp'
@@ -107,6 +115,9 @@ function renderMsrp(feature, card) {
   card.appendChild(msrp)
 }
 
+
+
+/////////// POWER TRAIN ///////////
 function renderPowertrainOptions(powertrain, index) {
   const featureName = 'powertrain'
 
@@ -139,15 +150,26 @@ function renderPowertrainOptions(powertrain, index) {
   renderRadio(powertrain, featureName, cardRadio, name, !index)
 }
 
+
+
+/////////// EXTERIOR ///////////
 function renderExteriorOptions(exterior, index) {
   const featureName = 'exterior'
 
-  const card = document.createElement('div')
-  divs.exteriors.appendChild(card)
+  const row = document.createElement('div')
+  row.classList.add("row");
+  divs.exteriors.appendChild(row)
 
-  // const name = document.createElement('h4')
-  // name.textContent = exterior.color + " - " + exterior.trim
-  // card.appendChild(name)
+  const cardRadio = document.createElement('div')
+  cardRadio.classList.add("col-lg-1", "align-items-right", "pt-20");
+  row.appendChild(cardRadio)
+
+  const card = document.createElement('div')
+  card.classList.add("col-lg-4", "align-items-center");
+  row.appendChild(card)
+
+  // const card = document.createElement('div')
+  // divs.exteriors.appendChild(card)
 
   const name = document.createElement('h4')
   name.textContent = exterior.color
@@ -159,14 +181,29 @@ function renderExteriorOptions(exterior, index) {
 
   renderMsrp(exterior, card)
 
-  renderRadio(exterior, featureName, card, name, !index)
+  renderRadio(exterior, featureName, cardRadio, name, !index)
 }
 
+
+
+/////////// WHEELS ///////////
 function renderWheelOptions(wheel, index) {
   const featureName = 'wheels'
 
+  const row = document.createElement('div')
+  row.classList.add("row");
+  divs.wheels.appendChild(row)
+
+  const cardRadio = document.createElement('div')
+  cardRadio.classList.add("col-lg-1", "align-items-right", "pt-20");
+  row.appendChild(cardRadio)
+
   const card = document.createElement('div')
-  divs.wheels.appendChild(card)
+  card.classList.add("col-lg-4", "align-items-center");
+  row.appendChild(card)
+
+  // const card = document.createElement('div')
+  // divs.wheels.appendChild(card)
 
   const name = document.createElement('h4')
   name.textContent = wheel.name
@@ -182,13 +219,29 @@ function renderWheelOptions(wheel, index) {
 
   renderMsrp(wheel, card)
 
-  renderRadio(wheel, featureName, card, name, !index)
+  renderRadio(wheel, featureName, cardRadio, name, !index)
 }
 
+
+
+/////////// INTERIOR ///////////
 function renderInteriorOptions(interior, index) {
   const featureName = 'interior'
+
+  const row = document.createElement('div')
+  row.classList.add("row");
+  divs.interiors.appendChild(row)
+
+  const cardRadio = document.createElement('div')
+  cardRadio.classList.add("col-lg-1", "align-items-right", "pt-20");
+  row.appendChild(cardRadio)
+
   const card = document.createElement('div')
-  divs.interiors.appendChild(card)
+  card.classList.add("col-lg-4", "align-items-center");
+  row.appendChild(card)
+
+  // const card = document.createElement('div')
+  // divs.interiors.appendChild(card)
 
   const name = document.createElement('h4')
   name.textContent = interior.color + " - " + interior.upholstery
@@ -200,21 +253,36 @@ function renderInteriorOptions(interior, index) {
 
   renderMsrp(interior, card)
 
-  renderRadio(interior, featureName, card, name, !index)
+  renderRadio(interior, featureName, cardRadio, name, !index)
 }
 
+
+
+/////////// ACCESSORIES ///////////
 function renderAccessoryOptions(accessory) {
   const featureName = 'accessories'
 
+  const row = document.createElement('div')
+  row.classList.add("row");
+  divs.accessories.appendChild(row)
+
+  const cardRadio = document.createElement('div')
+  cardRadio.classList.add("col-lg-1", "align-items-right", "pt-20");
+  row.appendChild(cardRadio)
+
   const card = document.createElement('div')
-  divs.accessories.appendChild(card)
+  card.classList.add("col-lg-4", "align-items-center");
+  row.appendChild(card)
+
+  // const card = document.createElement('div')
+  // divs.accessories.appendChild(card)
 
   const checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
   checkbox.name = featureName
   checkbox.value = accessory.id
   checkbox.dataset.cost = accessory.msrp
-  card.appendChild(checkbox)
+  cardRadio.appendChild(checkbox)
 
   const name = document.createElement('h4')
   name.textContent = accessory.name
@@ -227,6 +295,8 @@ function renderAccessoryOptions(accessory) {
 
   renderMsrp(accessory, card)
 }
+
+
 
 function showSelection(event) {
   const selectionContainer = event.target.closest('.section-top-border').querySelector('h5')
@@ -251,6 +321,8 @@ function showSelection(event) {
 
 }
 
+
+
 function toggleExpandFeature() {
   let expandBtn
   if (event.target.classList.contains('expand-btn')) {
@@ -264,13 +336,15 @@ function toggleExpandFeature() {
   options.classList.toggle('collapse')
 
   if (options.classList.contains('collapse')) {
-    expandBtn.textContent = 'Expand'
+    expandBtn.querySelector("span").textContent = 'Expand'
 
     progressCompleted(options.id)
   } else {
-    expandBtn.textContent = 'Submit'
+    expandBtn.querySelector("span").textContent = 'Submit'
   }
 }
+
+
 
 function hideOtherCars(carId) {
   divs.car.childNodes.forEach((car) => {

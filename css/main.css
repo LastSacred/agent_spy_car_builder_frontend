@@ -2405,8 +2405,10 @@ body:after {
 
 .single-widget .icon {
   text-align: center;
-  height: 60px;
-  width: 60px;
+  /* height: 60px;
+  width: 60px; */
+  height: 55px;
+  width: 115px;
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   position: relative;
@@ -2626,8 +2628,8 @@ footer .copy-right-text a {
     z-index: 10!important;}
 
 #status-bar-padding {
-    padding-left: 20px;
-    padding-right: 100px;}
+    padding-left: 10px;
+    padding-right: 0px;}
 
 .expand-collapse-style{
     line-height: 25px;
@@ -2643,9 +2645,14 @@ footer .copy-right-text a {
     /* background-image: -webkit-linear-gradient(0deg, rgba(29, 67, 80, .7) 0%, rgba(164, 57, 49, 0.7) 100%);} */
     /* background-image: -webkit-linear-gradient(0deg, rgba(29, 67, 80, .7) 0%, rgba(164, 57, 49, 0.7) 100%); */
 
-#powertrain input {
+#powertrain input,
+#exterior input,
+#exterior input,
+#wheels input,
+#interior input,
+#accessories input {
     float: right;
-    border: 1px red solid!important;}
+}
 
 /*#exterior * {
     border: 1px red solid;}
@@ -2670,9 +2677,40 @@ footer .copy-right-text a {
     max-width: 83%;
     height: auto;}
 
-#car-button * {
+.primary-btn * {
     pointer-events: none;}
 
 li {
   list-style-type: none;
+}
+
+#save-btn {
+    margin-top: -25px;
+}
+
+.save-btn-color {
+    background-color: #34d748;
+}
+
+#save-btn-p {
+    color: #545454;
+    font-weight: 600;
+    padding: 13% 8% 0% 0%;
+}
+.save-btn-p {
+    color: rgba(54, 44, 41, .7) !important;
+}
+
+#save-btn-span {
+    color: #545454;
+    padding: 0% 0% 6% 0%;
+}
+
+.save-btn-span {
+    color: rgba(54, 44, 41, .7) !important;
+}
+
+#save-background:after,
+#save-background:hover {
+    background-image: none;
 }
