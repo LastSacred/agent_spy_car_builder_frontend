@@ -249,7 +249,6 @@ function toggleExpandFeature() {
   } else {
     expandBtn = event.target.closest('.row').querySelector('.primary-btn')
   }
-  debugger
   const options = expandBtn.parentElement.querySelector('.options')
 
   options.classList.toggle('collapse')
